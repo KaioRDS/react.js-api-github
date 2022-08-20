@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+    
+}
+
+/* .container-app{
+    background-color: wheat;
+} */
+.header-name{
+    color: white;
+    font-family: Montserrat;
+    font-weight: 600;
+}
+.row-header{
+    border-bottom: solid 1px #444;
+}
+.row-input-search{
+    border-radius: 15px;
+    border: solid 1px #444;
+}
+.input-search-repository{
+    border: 0;
+    background: transparent;
+    padding: 10px;
+    outline: 0;
+    color: #FFF;
+    font-size: 20px;
+    flex: 1;
+}
