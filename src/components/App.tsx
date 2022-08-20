@@ -6,37 +6,21 @@ import InputSearchRepository from "../components/InputSearchRepository";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {useState} from 'react'
+import showAlertEmptyInput from '../helpers/sweetAlert/ShowAlertInputEmpty'
+
 function App() {
   
-  const [result , setResult] = useState([]);
+  const [result , setResult] = useState({});
+
 
   const functionGetUserGithub = (nameUser:string)=>{
 
-    getUserRequest(nameUser);
-    // console.log(result.length)
-    if (result.length > 0) {
-      result.forEach((value)=>{
-        console.log(value)
-      }) 
+    if(nameUser == ''){
+      showAlertEmptyInput()
     }else{
-      console.log(result)
+      
     }
-  }
-
-  async function getUserRequest(nameUser:string){
-    const baseUrl = nameUser != '' ?  `https://api.github.com/users/${nameUser}` : `https://api.github.com/users`;
-
-    // const baseUrl = "https://api.github.com/users";
-    await fetch(baseUrl)
-    .then((response) => {
-      if (response.status == 404) {
-        setResult([]);
-      }else{
-        response.json().then((e)=>{
-          setResult(e);
-        })
-      }
-    })
+   
   }
 
   return (

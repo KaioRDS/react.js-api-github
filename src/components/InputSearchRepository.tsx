@@ -12,7 +12,6 @@ function InputSearchrepository(prop:Props){
         if (e.key === 'Enter') {
             prop.functionGetUserGit(nameUser);
         }
-        
     }
 
     const changeValueInput = (e:React.ChangeEvent<HTMLInputElement>)=>{
