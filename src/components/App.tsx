@@ -9,10 +9,10 @@ import React, {useState} from 'react'
 import showAlertEmptyInput from '../helpers/sweetAlert/ShowAlertInputEmpty'
 import GetReposbyUser from '../helpers/api-github/GetReposbyUser'
 import showAlertUserNotFound from '../helpers/sweetAlert/showAlertUserNotFound'
+import Arcordeon from '../components/Arcordeon'
 function App() {
   
-  const [result , setResult] = useState([]);
-  const [show , setShow] = useState(true);
+  const [result , setResult] = useState<[]>([]);
 
 
   const functionGetUserGithub = (nameUser:string)=>{
@@ -41,7 +41,11 @@ function App() {
       <Row className='mt-4 row-input-search'>
         <Col className="d-flex justify-content-center"><InputSearchRepository functionGetUserGit={functionGetUserGithub}></InputSearchRepository></Col>
       </Row>
-      
+      <Row>
+        <Col>
+          <Arcordeon repos={result}></Arcordeon>
+        </Col>
+      </Row>
   </Container>
   )
 }

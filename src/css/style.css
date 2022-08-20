@@ -27,3 +27,19 @@ body{
     font-size: 20px;
     flex: 1;
 }
+.accordion-item{
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+}
+.accordion-item button{
+    background-color: #20212C;
+    color: white;
+}
+.accordion-button{
+    background-color: #20212C !important;
+    color: white !important;
+}
+
+
+
