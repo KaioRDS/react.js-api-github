@@ -11,7 +11,7 @@ import GetReposbyUser from '../helpers/api-github/GetReposbyUser'
 import showAlertUserNotFound from '../helpers/sweetAlert/showAlertUserNotFound'
 function App() {
   
-  const [result , setResult] = useState([{}]);
+  const [result , setResult] = useState([]);
   const [show , setShow] = useState(true);
 
 
@@ -24,6 +24,7 @@ function App() {
       repors.then(values =>{
         if (values.status === false && values.code == 404) {
           showAlertUserNotFound();
+          setResult([])
         }else{
           setResult(values)
         }
@@ -40,7 +41,7 @@ function App() {
       <Row className='mt-4 row-input-search'>
         <Col className="d-flex justify-content-center"><InputSearchRepository functionGetUserGit={functionGetUserGithub}></InputSearchRepository></Col>
       </Row>
-    
+      
   </Container>
   )
 }

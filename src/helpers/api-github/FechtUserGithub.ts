@@ -1,16 +1,15 @@
-async function FechtUserGithub(nameUser:string){
-    const baseUrl = nameUser != '' ?  `https://api.github.com/users/${nameUser}` : `https://api.github.com/users`;
+async function FechtUserGithub(nameUser:string) {
+    const baseUrl = `https://api.github.com/users/${nameUser}` ;
+    let objReturn: {code:number,status:boolean} = {code:0,status:false};
+    const response = await fetch(baseUrl);
+    if (response.status == 200) {
+        const objUser = await response.json();
+        return objUser;
+    }else{
+        objReturn.status = false
+        objReturn.code = response.status
+        return objReturn;
+    }
 
-    // const baseUrl = "https://api.github.com/users";
-    // await fetch(baseUrl)
-    // .then((response) => {
-    //   if (response.status == 404) {
-    //     setResult([]);
-    //   }else{
-    //     response.json().then((e)=>{
-    //       setResult(e);
-    //     })
-    //   }
-    // })
 }
 export default FechtUserGithub;
