@@ -2,9 +2,6 @@ async function GetBranchsByRepository(urlRepos : string){
 
     const promisse = await fetch(urlRepos);
     const branchs = await promisse.json();
-    branchs.then(value =>
-        {
-            console.log(value)
-        })
+    return branchs;
 }
 export default GetBranchsByRepository;

@@ -1,15 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/style.css'
-import Header from '../components/Header'
+import Header from './Header'
 import Container from 'react-bootstrap/Container';
-import InputSearchRepository from "../components/InputSearchRepository";
+import InputSearchRepository from "../components/InputSearchReposiroty/InputSearchRepository";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import React, {useState} from 'react'
-import showAlertEmptyInput from '../helpers/sweetAlert/ShowAlertInputEmpty'
+import showAlertEmptyInput from './sweetAlert/ShowAlertInputEmpty/ShowAlertInputEmpty'
 import GetReposbyUser from '../helpers/api-github/GetReposbyUser'
-import showAlertUserNotFound from '../helpers/sweetAlert/showAlertUserNotFound'
-import Arcordeon from '../components/Arcordeon'
+import showAlertUserNotFound from './sweetAlert/showAlertUserNotFound/showAlertUserNotFound'
+import Arcordeon from './Arcordeon'
 function App() {
   
   const [result , setResult] = useState<[]>([]);
@@ -19,6 +19,7 @@ function App() {
 
     if(nameUser == ''){
       showAlertEmptyInput()
+      setResult([])
     }else{
       let repors = GetReposbyUser(nameUser);
       repors.then(values =>{

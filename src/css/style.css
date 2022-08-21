@@ -40,6 +40,30 @@ body{
     background-color: #20212C !important;
     color: white !important;
 }
+.accordion-body{
+    padding: 0;
+}
+.body-accordeon{
+    text-align: center;
+    border-bottom: solid 1px #444;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.body-accordeon:hover{
+    background-color:#DCDCDC;
+}
+.popup-list-commits{
+    color: white !important;
+    margin-top: 160px;
+    background-color: #444 !important;
+}
+.cards-commits{
+    color: black !important;
+    margin-bottom: 15px;
+}
+
 
 
 
