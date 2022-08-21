@@ -9,12 +9,15 @@ type Props = {
 function BodyAccordeon(props:Props){
 
     async function openAllCommitsOnModal(){
-        // console.log(props.urlCommits)
-        // let modalLoad = LoadCommits();
-        
+        //colocando modal de load
+        let modalLoad = LoadCommits();
+        // modalLoad.close()
         let commits = await GetAllCommits(props.urlCommits);
-        
-        let modalListCommits = ListAllcommits(commits);
+
+        setTimeout(() => {
+            modalLoad.close();
+            let modalListCommits = ListAllcommits(commits);
+        }, 1000);
     }
 
     return (
