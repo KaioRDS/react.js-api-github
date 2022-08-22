@@ -16,7 +16,7 @@ function InnerHtmlListCommits(props:Props){
                     <Card.Text>
                         {item.commit.message}
                     </Card.Text>
-                    <Button onClick={()=> window.open( item.html_url, "_blank")} variant="primary">Primary</Button>{' '}
+                    <Button onClick={()=> window.open( item.html_url, "_blank")} variant="primary">Veja no github</Button>{' '}
                 </Card.Body>
             </Card>
             ))
